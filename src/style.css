@@ -1,0 +1,265 @@
+/* Estilos globales para la aplicación */
+
+/* Importar animate.css para animaciones de SweetAlert2 */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
+
+/* Reset básico */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fafafa;
+}
+
+
+/* Estilos generales */
+/* Estilos para mejorar la accesibilidad */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Estilos para los enlaces */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+/* Estilos para mejorar la UX */
+.v-btn {
+  text-transform: none !important;
+  font-weight: 500 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.3s ease !important;
+}
+
+.v-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.v-btn:disabled {
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+}
+
+.v-card {
+  border-radius: 16px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+  transition: all 0.3s ease !important;
+}
+
+.v-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12) !important;
+}
+
+.v-data-table {
+  border-radius: 12px !important;
+}
+
+.v-text-field {
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+}
+
+.v-text-field .v-field {
+  border-radius: 12px !important;
+}
+
+.v-text-field:hover:not(.v-field--disabled) {
+  transform: translateY(-1px);
+}
+
+.v-chip {
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+}
+
+.v-avatar {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Animaciones suaves */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+  .v-data-table {
+    font-size: 0.875rem;
+  }
+
+  .v-btn {
+    min-width: auto !important;
+  }
+
+  .v-card {
+    margin: 8px;
+    border-radius: 12px !important;
+  }
+
+  .text-h4 {
+    font-size: 1.5rem !important;
+  }
+}
+
+/* Estilos para el formulario */
+.v-form {
+  max-width: 100%;
+}
+
+.v-text-field {
+  margin-bottom: 8px;
+}
+
+/* Estilos para los mensajes de error */
+.v-alert {
+  border-radius: 12px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Estilos para el loading */
+.v-progress-linear {
+  border-radius: 4px;
+}
+
+.v-progress-circular {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* Estilos para mejorar la legibilidad */
+.v-card-title {
+  font-weight: 600 !important;
+  font-size: 1.25rem !important;
+}
+
+.v-card-text {
+  padding: 16px 24px;
+  line-height: 1.6;
+}
+
+/* Estilos para los tooltips */
+.v-tooltip .v-overlay__content {
+  background: rgba(0, 0, 0, 0.9) !important;
+  color: white !important;
+  border-radius: 8px !important;
+  font-size: 0.875rem !important;
+  padding: 8px 12px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Estilos para el app bar */
+.v-app-bar {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Estilos para la paginación */
+.v-pagination {
+  gap: 4px;
+}
+
+.v-pagination .v-btn {
+  border-radius: 8px !important;
+  min-width: 40px !important;
+}
+
+/* Efectos de hover personalizados */
+.hover-lift {
+  transition: all 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Gradientes sutiles */
+.gradient-bg {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Estilos para estados vacíos */
+.empty-state {
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.empty-state:hover {
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+/* Estilos para estados de carga */
+.loading-state {
+  opacity: 0.9;
+}
+
+.loading-state .custom-spinner {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+/* Mejoras de accesibilidad */
+.v-btn:focus-visible {
+  outline: 2px solid #1976d2;
+  outline-offset: 2px;
+}
+
+.v-text-field:focus-within {
+  transform: translateY(-1px);
+}
+
+/* Estilos para elementos deshabilitados */
+.v-btn:disabled,
+.v-text-field:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
